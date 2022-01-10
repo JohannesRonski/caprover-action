@@ -1,4 +1,4 @@
-name: 'CapRover Deploy'
+name: 'CapRover Deploy Token'
 description: 'Action to deploy on Caprover server'
 author: 'Alexey Schebelev'
 branding:
