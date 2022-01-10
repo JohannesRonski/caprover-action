@@ -8,9 +8,9 @@ Action to deploy on Caprover server.
 
 **Required** CapRover server's admin panel URL. Ex. https://captain.root.domain.com.
 
-### `password`
+### `token`
 
-**Required** CapRover admin password. Use ${{ secrets.CAPROVER_PASSWORD }} for better security.
+**Required** CapRover application token. Use ${{ secrets.CAPROVER_TOKEN }} for better security.
 
 ### `appname`
 
