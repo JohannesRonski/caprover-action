@@ -26,6 +26,6 @@ Branch which will be deployed. *Default: master*
 uses: AlexxNB/caprover-action@v1
 with:
   server: 'https://captain.root.domain.com'
-  password: '${{ secrets.CAPROVER_PASSWORD }}'
+  token: '${{ secrets.CAPROVER_TOKEN }}'
   appname: 'my-app'
 ```
