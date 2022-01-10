@@ -8,8 +8,8 @@ inputs:
   server:
     description: 'CapRover admin panel URL. Ex. https://captain.root.domain.com'
     required: true
-  password:
-    description: 'CapRover admin password. Use $\{{ secrets.CAPROVER_PASSWORD }} for better security.'
+  token:
+    description: 'CapRover application token. Use $\{{ secrets.CAPROVER_TOKEN }} for better security.'
     required: true
   appname:
     description: 'Application name on the CapRover server. Must exists.'
