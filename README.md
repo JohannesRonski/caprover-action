@@ -23,7 +23,7 @@ Branch which will be deployed. *Default: master*
 
 ## Example usage
 ```
-uses: AlexxNB/caprover-action@v1
+uses: Fabrimat/caprover-action@v2.1
 with:
   server: 'https://captain.root.domain.com'
   token: '${{ secrets.CAPROVER_TOKEN }}'
