@@ -1,1 +1,1 @@
-caprover deploy --host $INPUT_SERVER --appToken $INPUT_TOKEN --branch $INPUT_BRANCH --appName $INPUT_APPNAME 
+caprover deploy --caproverUrl $INPUT_SERVER --appToken $INPUT_TOKEN --imageName $INPUT_IMAGE --appName $INPUT_APPNAME 
