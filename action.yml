@@ -1,6 +1,6 @@
-name: 'CapRover Deploy Token'
+name: 'CapRover Deploy Token & Image'
 description: 'Action to deploy on Caprover server'
-author: 'Alexey Schebelev'
+author: 'Johannes Ronski'
 branding:
   icon: upload-cloud
   color: orange
@@ -14,10 +14,9 @@ inputs:
   appname:
     description: 'Application name on the CapRover server. Must exists.'
     required: true
-  branch:
-    description: 'Branch which will be deployed'
-    required: false
-    default: 'master'
+  image:
+    description: 'Image name which will be deployed'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
