@@ -10,7 +10,10 @@ Action to deploy on Caprover server.
 
 ### `token`
 
-**Required** CapRover application token. Use ${{ secrets.CAPROVER_TOKEN }} for better security.
+CapRover application token. Use ${{ secrets.CAPROVER_TOKEN }} for better security.
+### `password`
+
+CapRover application password. Use ${{ secrets.CAPROVER_PASSWORD }} for better security.
 
 ### `appname`
 
@@ -19,6 +22,12 @@ Action to deploy on Caprover server.
 ### `image`
 
 Image name which will be deployed.
+### `tar`
+
+Tar file name which will be deployed.
+### `branch`
+
+Branch name which will be deployed.
 
 
 ## Example usage

@@ -1,22 +1,31 @@
-name: 'CapRover Deploy Token & Image'
-description: 'Action to deploy on Caprover server'
-author: 'Johannes Ronski'
+name: "CapRover Deploy Token & Image"
+description: "Action to deploy on Caprover server"
+author: "Johannes Ronski"
 branding:
   icon: upload-cloud
   color: orange
 inputs:
   server:
-    description: 'CapRover admin panel URL. Ex. https://captain.root.domain.com'
+    description: "CapRover admin panel URL. Ex. https://captain.root.domain.com"
     required: true
   token:
     description: 'CapRover application token. Use $\{{ secrets.CAPROVER_TOKEN }} for better security.'
-    required: true
+    required: false
+  password:
+    description: 'CapRover application password. Use $\{{ secrets.CAPROVER_PASSWORD }} for better security.'
+    required: false
   appname:
-    description: 'Application name on the CapRover server. Must exists.'
+    description: "Application name on the CapRover server. Must exists."
     required: true
   image:
-    description: 'Image name which will be deployed'
-    required: true
+    description: "Image name which will be deployed"
+    required: false
+  tar:
+    description: "Tar file which will be deployed"
+    required: false
+  branch:
+    description: "Branch which will be deployed"
+    required: false
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"
