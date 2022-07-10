@@ -16,9 +16,9 @@ Action to deploy on Caprover server.
 
 **Required** Application name on the CapRover server. Must exists.
 
-### `branch`
+### `image`
 
-Branch which will be deployed. *Default: master*
+Image name which will be deployed.
 
 
 ## Example usage
@@ -28,4 +28,5 @@ with:
   server: 'https://captain.root.domain.com'
   token: '${{ secrets.CAPROVER_TOKEN }}'
   appname: 'my-app'
+  image: nginx:latest
 ```
