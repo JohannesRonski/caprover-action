@@ -25,10 +25,11 @@ if [[ ! -z $INPUT_DEPLOY_CHECK_WAIT_TIME ]]; then
         
         # app build finished
         if [[ $is_app_building = false && $is_build_failed = false ]]; then
+            echo "Deployment succeeded on caprover server"
             exit 0
         # app build finished but failed
         elif [[ $is_app_building = false && $is_build_failed = true ]]; then
-            echo "Deployment build failed on caprover server"
+            echo "Deployment failed on caprover server"
             exit 1
         fi
         sleep 1
