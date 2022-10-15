@@ -6,13 +6,13 @@ test $INPUT_PASSWORD && export CAPROVER_PASSWORD=$INPUT_PASSWORD
 export CAPROVER_APP=$INPUT_APPNAME
 test $INPUT_TAR && export CAPROVER_TAR_FILE=$INPUT_TAR
 test $INPUT_IMAGE && export CAPROVER_IMAGE_NAME=$INPUT_IMAGE
-test $INPUT_TOKEN && export CAPROVER_APP_TOKEN=$INPUT_TOKEN
+test $INPUT_TOKEN && test -z $INPUT_PASSWORD && export CAPROVER_APP_TOKEN=$INPUT_TOKEN
 test $INPUT_BRANCH && export CAPROVER_BRANCH=$INPUT_BRANCH
 
 caprover deploy
 
 # check if build succeed
-if [[ ! -z $INPUT_DEPLOY_CHECK_WAIT_TIME ]]; then
+if [[ ! -z $INPUT_DEPLOY_CHECK_WAIT_TIME && ! -z $INPUT_PASSWORD ]]; then
     export CAPROVER_API_PATH="\user\apps\appData\\$INPUT_APPNAME"
     export CAPROVER_API_METHOD="GET"
     export CAPROVER_API_DATA="{}"
@@ -36,4 +36,5 @@ if [[ ! -z $INPUT_DEPLOY_CHECK_WAIT_TIME ]]; then
     done
     echo "Deploy check wait time exceeded. Deployment may have failed."
     echo "Increase the deploy check wait time for the next run."
+    exit 1
 fi

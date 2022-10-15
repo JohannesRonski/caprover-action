@@ -27,7 +27,7 @@ inputs:
     description: "Branch which will be deployed"
     required: false
   deploy_check_wait_time:
-    description: "Time to check for deployment status"
+    description: "Time to check for deployment status. Only available if password (not token only) is set!"
     default: "30"
     required: false
 runs:
