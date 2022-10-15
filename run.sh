@@ -13,13 +13,16 @@ caprover deploy
 
 # check if build succeed
 if [[ ! -z $INPUT_DEPLOY_CHECK_WAIT_TIME && ! -z $INPUT_PASSWORD ]]; then
-    export CAPROVER_API_PATH="\user\apps\appData\\$INPUT_APPNAME"
+    export CAPROVER_API_PATH="/user/apps/appData/$INPUT_APPNAME"
     export CAPROVER_API_METHOD="GET"
     export CAPROVER_API_DATA="{}"
     export CAPROVER_API_OUTPUT=true
     for i in {1..$INPUT_DEPLOY_CHECK_WAIT_TIME}
     do
-        output=$(caprover api)
+        echo "Checking deployment state $i"
+    
+        caprover api -o output.json
+        output="$(cat output.json)"
         is_app_building=$(echo "$output" | json isAppBuilding)
         is_build_failed=$(echo "$output" | json isBuildFailed)
         
