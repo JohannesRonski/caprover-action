@@ -29,6 +29,10 @@ Tar file name which will be deployed.
 
 Branch name which will be deployed.
 
+### `deploy_check_wait_time`
+
+Time to check for deployment status. Default is 30 seconds.
+
 
 ## Example usage
 ```
